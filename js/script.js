@@ -1,8 +1,3 @@
-// uses search form to show weather in any city the user searches for
-
-
-//API Key: c0332f214fd1e9a8b4334f5909bf6fbf
-
 
 document.querySelector('input').placeholder = "City Name";
 
@@ -32,12 +27,3 @@ getInfoBtn.addEventListener('click', (e) => {
     })
 
 })
-
-// fetch(url).then(res => {
-//     console.log('success!', res)
-// }).catch(err => {
-//     console.log('something went wrong', err)
-// })
-
-// temp = ((data.main.temp * 9/5) + 32) 
-        // feels = ((data.main.feels_like * 9/5) + 32)
