@@ -13,20 +13,21 @@ const temp = document.getElementById('temp');
 const feel = document.getElementById('feels');
 const weather = document.getElementById('current');
 
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputBox}&appid=c0332f214fd1e9a8b4334f5909bf6fbf`
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputBox.value}&appid=c0332f214fd1e9a8b4334f5909bf6fbf`
 
 
 getInfoBtn.addEventListener('click', (e) => {
     e.preventDefault()
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputBox.value}&appid=c0332f214fd1e9a8b4334f5909bf6fbf`
     console.log(inputBox.value)
     fetch(url)
     .then((res) => res.json())
     .then((data) => {
         console.log(data)
-        locale.innerText = data.name
-        // temp.innerText = data.main.temp 
-        // feel.innerText = data.main.feels_like
-        // weather.innerText = data.weather[0].description
+        locale.innerText = `Weather for: ${data.name}`
+        temp.innerText = `Temperature: ${data.main.temp}` 
+        feel.innerText = `Feels Like: ${data.main.feels_like}`
+        weather.innerText = `Current Conditions: ${data.weather[0].description}`
         
     })
 
